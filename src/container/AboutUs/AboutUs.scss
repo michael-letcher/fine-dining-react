@@ -1,0 +1,112 @@
+@use '../../styles/layout';
+@use '../../styles/typography';
+@use '../../styles/breakpoints';
+
+.app__aboutus {
+  position: relative;
+  @include layout.section__padding;
+  @include layout.flex__center;
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    @include layout.flex__center;
+    img {
+      max-width: 25rem;
+
+      @include breakpoints.sm {
+        width: 80%;
+      }
+    }
+  }
+
+  &-content {
+    @include layout.flex__center;
+    z-index: 1;
+
+    @include breakpoints.md {
+      flex-direction: column;
+    }
+
+    &_about {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 1rem;
+      text-align: right;
+      .app__aboutus-content-image {
+        transform: rotate(180deg);
+      }
+    }
+
+    &_history {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    &_knife {
+      flex: 0.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoints.md {
+        margin: -5rem auto;
+      }
+
+      img {
+        height: 910px;
+
+        @include breakpoints.md {
+          margin: -5rem inherit;
+          height: 80vw;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &-title {
+      color: var(--color-golden);
+      font-family: var(--font-base);
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 0.12rem;
+      text-transform: capitalize;
+    }
+
+    &-text {
+      @include typography.get('opensans');
+      color: var(--color-grey);
+      font-size: 1rem;
+      line-height: 175%;
+    }
+
+    &-cta {
+      cursor: pointer;
+      background-color: var(--color-golden);
+      font-family: var(--font-base);
+      text-transform: capitalize;
+      color: var(--color-black);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 175%; /* 1.75rem */
+      letter-spacing: 0.04rem;
+      padding: 0.5rem 2rem;
+      border: none;
+      outline: none;
+      border: 1px solid var(--color-golden);
+
+      &:hover {
+        background-color: transparent;
+        color: var(--color-golden);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use '../../styles/typography';
+@use '../../styles/breakpoints';
+
+.app__subheading {
+  margin-top: 1rem;
+
+  p {
+    @include typography.get('cormorant');
+  }
+
+  &-img {
+    width: 45px;
+
+    @include breakpoints.xl {
+      width: 80px;
+    }
+  }
+}

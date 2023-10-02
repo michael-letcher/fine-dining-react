@@ -1,3 +1,5 @@
+@use './breakpoints';
+
 @mixin get($type) {
   @if $type == 'opensans' {
     font-family: var(--font-alt);
@@ -7,6 +9,19 @@
     // text-transform: capitalize;
     line-height: 28px;
     font-size: 16px;
+
+    @include breakpoints.xl {
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    @include breakpoints.sm {
+      font-size: 14px;
+    }
+
+    @include breakpoints.xs {
+      font-size: 12px;
+    }
   } @else if $type == 'cormorant' {
     font-family: var(--font-base);
     color: var(--color-white);
@@ -16,6 +31,19 @@
     font-feature-settings: 'tnum' on, 'lnum' on;
     line-height: 29.9px;
     font-size: 23px;
+
+    @include breakpoints.xl {
+      font-size: 37px;
+      line-height: 67px;
+    }
+
+    @include breakpoints.sm {
+      font-size: 21px;
+    }
+
+    @include breakpoints.xs {
+      font-size: 19px;
+    }
   } @else {
     @warn "Unknown font type";
   }

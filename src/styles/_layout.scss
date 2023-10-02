@@ -1,3 +1,5 @@
+@use './breakpoints';
+
 @mixin flex__center {
   display: flex;
   justify-content: center;
@@ -6,4 +8,12 @@
 
 @mixin section__padding {
   padding: 4rem 6rem;
+
+  @include breakpoints.md {
+    padding: 4rem;
+  }
+
+  @include breakpoints.sm {
+    padding: 4rem 2rem;
+  }
 }
