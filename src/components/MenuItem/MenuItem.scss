@@ -1,0 +1,32 @@
+@use '../../styles/typography';
+
+.app_menuItem {
+  &-title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &-title {
+    @include typography.get('cormorant');
+    color: var(--color-golden);
+    flex: 1;
+  }
+
+  &-separator {
+    content: '';
+    width: 7.5rem;
+    height: 1px;
+    background-color: var(--color-white);
+  }
+
+  &-price {
+    @include typography.get('cormorant');
+  }
+
+  &-tags {
+    @include typography.get('opensans');
+    color: var(--color-grey);
+  }
+}

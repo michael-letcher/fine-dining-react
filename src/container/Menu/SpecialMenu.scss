@@ -1,0 +1,69 @@
+@use '../../styles/layout';
+@use '../../styles/typography';
+@use '../../styles/breakpoints';
+
+.app_specialMenu {
+  @include layout.section__padding;
+  @include layout.flex__center;
+  flex-direction: column;
+  gap: 2rem;
+
+  &-title {
+    text-align: center;
+  }
+
+  &-menu {
+    @include layout.flex__center;
+    gap: 2rem;
+    width: 100%;
+
+    @include breakpoints.lg {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    &_heading {
+      @include typography.get('cormorant');
+      font-size: 2.8rem;
+      text-align: center;
+      color: var(--FFFFFF, #fff);
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 0.1125rem;
+    }
+
+    &_cocktail,
+    &_wine {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include breakpoints.lg {
+        width: 500px;
+      }
+
+      @include breakpoints.sm {
+        width: 100%;
+      }
+    }
+
+    &_items {
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
+    }
+
+    &_img img,
+    &_img {
+      max-width: 412px;
+
+      @include breakpoints.lg {
+        display: none;
+      }
+    }
+
+    &-actions {
+      @include layout.flex__center;
+    }
+  }
+}
