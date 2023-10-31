@@ -1,16 +1,6 @@
 import './App.scss';
 import { Navbar } from './components';
-import {
-  AboutUs,
-  Chef,
-  FindUs,
-  Footer,
-  Gallery,
-  Header,
-  Intro,
-  Laurels,
-  SpecialMenu,
-} from './container';
+import { AboutUs, Chef, Footer, Header, Intro, SpecialMenu } from './container';
 
 const App = () => (
   <div className="">
@@ -20,9 +10,9 @@ const App = () => (
     <SpecialMenu />
     <Chef />
     <Intro />
-    <Laurels />
-    <Gallery />
-    <FindUs />
+    {/* <Laurels /> */}
+    {/* <Gallery /> */}
+    {/* <FindUs /> */}
     <Footer />
   </div>
 );

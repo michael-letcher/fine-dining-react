@@ -1,5 +1,5 @@
 import './Laurels.scss';
 
-const Laurels = () => <div>Laurels</div>;
+const Laurels = () => <section className="app__laurels">Laurels</section>;
 
 export default Laurels;
