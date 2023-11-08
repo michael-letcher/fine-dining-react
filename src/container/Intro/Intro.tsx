@@ -5,7 +5,7 @@ import './Intro.scss';
 
 const Intro = () => {
   const [playVideo, setPlayVideo] = useState(false);
-  const vidRef = React.useRef<HTMLVideoElement>();
+  const vidRef = React.useRef<HTMLVideoElement>(null);
 
   const handleVideo = () => {
     setPlayVideo((prevPlayVideo) => !prevPlayVideo);
@@ -19,14 +19,7 @@ const Intro = () => {
 
   return (
     <section className="app__video">
-      <video
-        src={meal}
-        ref={vidRef}
-        type="video/mp4"
-        loop
-        controls={false}
-        muted
-      ></video>
+      <video src={meal} ref={vidRef} loop controls={false} muted></video>
       <div className="app__video-overlay">
         <div className="app__video-overlay_circle" onClick={handleVideo}>
           {playVideo ? (
